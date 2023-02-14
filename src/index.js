@@ -28,15 +28,21 @@ const init = () => {
                 breedArray.forEach(breed => {
                     const li = document.createElement('li')
                     li.textContent = breed;
+                    li.addEventListener('click', liColorChanger);
                     dogBreedUl.appendChild(li);
                 });
             });
-                
 };
+
+function liColorChanger(e) {
+    e.target.style = "color:green"
+}
             
 
 document.addEventListener('DOMContentLoaded', init);
 
 
 // Challenge 1: complete
-// Challenge 2: 
+// Challenge 2: complete
+// Challenge 3: complete
+// Challenge 4:
