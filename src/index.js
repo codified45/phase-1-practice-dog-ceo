@@ -17,6 +17,20 @@ const init = () => {
                     mainDiv.appendChild(img);
                 })
                 });
+
+    const dogBreedUl = document.getElementById('dog-breeds');
+    let breedArray = [];
+
+    fetch(breedUrl)
+        .then(res => res.json())
+            .then(object => {
+                breedArray = [...Object.keys(object.message)]
+                breedArray.forEach(breed => {
+                    const li = document.createElement('li')
+                    li.textContent = breed;
+                    dogBreedUl.appendChild(li);
+                });
+            });
                 
 };
             
